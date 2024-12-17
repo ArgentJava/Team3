@@ -1,6 +1,6 @@
 # Team3 <RankMates>
 ## Social platform that lets you pit your friends against eachother to find your real mates!
-- RankMates was inspired by MySpace's friend feature that let you choose the best friends you wanted displayed on your page.
+- RankMates is inspired by MySpace's friend feature that let you choose the best friends you wanted displayed on your page.
 - It's a fun application that excersizes many C++ practices to display the new skills we've developed over the corse.
 - While simply fun, RankMate keeps track of your friendship scores, rewarding and promoting those you share the most interests with, and encoraging new friendships. 
 ## Table of Contents (Optional)
