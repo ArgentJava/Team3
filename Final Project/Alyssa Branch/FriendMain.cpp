@@ -2,7 +2,7 @@
     & Jestyn Lytle
     24FA-CS211
     12/16/24
-    Friend.cpp
+    FriendMain.cpp
 */
 #include "Friend.hpp"
 #include <iostream>
