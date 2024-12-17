@@ -1,33 +1,54 @@
-/*  Alyssa Trevino
+/*  Alyssa Trevino 
+    & Jestyn Lytle
     24FA-CS211
-    12/8/24
+    12/16/24
     Friend.hpp
 */
+    //  Defining Friend.hpp
 #ifndef Friend_hpp
 #define Friend_hpp
 #include <iostream>
 #include <string>
 using namespace std;
-
-class Friend{
-    private:
+    //  Creating base class Profile to hold Name variable and impliment virtual functions
+class Profile{
+protected:
     string Name;
-    long phNum;
+
+public:
+    //  Profile Constructors/Destructor
+    Profile();
+    Profile(string Name);
+    //  Profile ~Destructor
+    ~Profile();
+
+    //  Pure virtual functions 
+    ////virtual void setName(string newName) = 0;
+    virtual string getName() = 0;
+};
+
+    //  Derived Friend class from Base Profile
+class Friend: public Profile{
+    private:
+    //  Carries private phNum and friendScore data variables
+    string phNum;
     int friendScore;
 
     public:
+    //  Friend Constructors/Destructor
     Friend();
-    Friend(string Name, long long phNum, int friendScore);
+    Friend(string Name, string phNum, int friendScore);
     ~Friend();
-    void setName(string& newName);
+
+    //  Declaration for getName() virtual function
     string getName();
-    void setPhNum(long long& newNum);
-    long long getPhNum();
-    void setScore(int& newScore);
+    //  Getter functions for Friend variables phNum & friendScore
+    string getPhNum();
+    int getScore();
+    //  Increase, Decrease, and Alter functions to edit score
     int incScore(int amount);
     int decScore(int amount);
     int altScore();
-    int getScore();
     void displayFriend();
 
 };
