@@ -1,5 +1,4 @@
-# <RankMates>
-# Team3
+# Team3 <RankMates>
 ## Social platform that lets you pit your friends against eachother to find your real mates!
 - We were inspired by MySpace's friend feature that let you choose the best friends you wanted displayed on your page.
 - It's a fun application that excersizes many C++ practices to display the new skills we've developed over the corse.
