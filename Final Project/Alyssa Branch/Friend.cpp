@@ -1,6 +1,7 @@
-/*  Alyssa Trevino
+/*  Alyssa Trevino 
+    & Jestyn Lytle
     24FA-CS211
-    12/8/24
+    12/16/24
     Friend.cpp
 */
 #include "Friend.hpp"
@@ -8,24 +9,35 @@
 #include <string>
 using namespace std;
 
+    //  Profile Class Implimentations
+    Profile::Profile(){};
+    Profile::Profile(string name)
+    : Name{name}{};
+    Profile::~Profile(){};
+
+    //  Friend Class Implimentations
     Friend::Friend(){};
-    Friend::Friend(string name, long long num, int score)
-    : Name{name}, phNum{num}, friendScore{score} {};
+    Friend::Friend(string name, string num, int score)
+    : Profile{name}, phNum{num}, friendScore{score} {};
     Friend::~Friend(){};
-    void Friend::setName(string& newName){
-        Name = newName;
-    };
+
     string Friend::getName(){
         return Name;
     };
-    void Friend::setPhNum(long long& newNum){
-        phNum = newNum;
+    string Friend::getPhNum(){
+        if (phNum.length() != 10){
+            return "INVALID NUMBER";
+        }
+        string formatted = "(";
+        formatted += phNum.substr(0,3);
+        formatted += ") ";
+        formatted += phNum.substr(3,3);
+        formatted += "-";
+        formatted += phNum.substr(6,4);
+        return formatted;
     };
-    long long Friend::getPhNum(){
-        return phNum;
-    };
-    void Friend::setScore(int& newScore){
-        friendScore = newScore;
+    int Friend::getScore(){
+        return friendScore;
     };
     int Friend::incScore(int amount){
         friendScore = friendScore + amount;
@@ -37,9 +49,6 @@ using namespace std;
     };
     int Friend::altScore(){
         return ++friendScore;
-    };
-    int Friend::getScore(){
-        return friendScore;
     };
     void Friend::displayFriend(){
         cout << "\t" << getName() << "\t" << getPhNum() << "\t" << getScore() << endl;
